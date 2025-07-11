@@ -71,10 +71,11 @@ git clone https://github.com/your-username/dinesh-portfolio.git
 cd dinesh-portfolio
 
 ```
-# 📥 Install Dependencies
+### 📥 Install Dependencies
 
+```bash
 npm install
-```
+
 ```
 # 🔐 Configure Environment Variables
 Create a .env file in the root directory:

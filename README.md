@@ -1,3 +1,4 @@
+```markdown
 # 🚀 Dinesh Sharma – 3D Developer Portfolio
 
 > A visually engaging, interactive 3D developer portfolio built with **React**, **Three.js**, **React Three Fiber**, and **Framer Motion** — designed to make a strong first impression and showcase your work with immersive visuals.
@@ -69,37 +70,37 @@ Whether you're applying for jobs, seeking freelance work, or simply showing off 
 ```bash
 git clone https://github.com/your-username/dinesh-portfolio.git
 cd dinesh-portfolio
-
 ```
+
 ### 📥 Install Dependencies
 
 ```bash
 npm install
-
 ```
-# 🔐 Configure Environment Variables
-Create a .env file in the root directory:
 
-```bash
+### 🔐 Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
 REACT_APP_EMAILJS_USERID=your_emailjs_user_id
 REACT_APP_EMAILJS_TEMPLATEID=your_emailjs_template_id
 REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
 ```
 
-```
-# 🚀 Run the Development Server
+### 🚀 Run the Development Server
+
 ```bash
 npm run dev
-Visit http://localhost:5173 to see your portfolio in action.
-
-
 ```
 
+Visit [http://localhost:5173](http://localhost:5173) to see your portfolio in action.
 
-```
+---
+
 ## 📁 Project Structure
 
-```
+```text
 dinesh-portfolio/
 ├── public/
 ├── src/
@@ -116,23 +117,22 @@ dinesh-portfolio/
 └── vite.config.js
 ```
 
-# 📄 License
-This project is open-source and available under the MIT License.
+---
 
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Author
+
+Made with 💻 by **Dinesh Sharma**
+
+- 🧑‍💻 GitHub: [@ds1910](https://github.com/ds1910)
+- 🌐 Portfolio: [dineshsharma.dev](https://dineshsharma.dev)
+- 📧 Email: your.email@example.com
+- 💼 LinkedIn: [linkedin.com/in/ds1910](https://linkedin.com/in/ds1910)
+
+> If you liked this project, don’t forget to ⭐️ the repo and share it!
 ```
-
-
-```
-# 🙌 Author
-Made with 💻 by Dinesh Sharma
-
-🧑‍💻 GitHub: @ds1910
-
-🌐 Portfolio: dineshsharma.dev
-
-📧 Email: your.email@example.com
-
-💼 LinkedIn: linkedin.com/in/ds1910
-
-If you liked this project, don't forget to ⭐️ the repo and share it!
-

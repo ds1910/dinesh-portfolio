@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Dinesh Sharma – 3D Developer Portfolio
 
 > A visually engaging, interactive 3D developer portfolio built with **React**, **Three.js**, **React Three Fiber**, and **Framer Motion** — designed to make a strong first impression and showcase your work with immersive visuals.
@@ -63,6 +62,8 @@ Whether you're applying for jobs, seeking freelance work, or simply showing off 
 | **Email**        | EmailJS                           |
 | **Bundler**      | Vite                              |
 
+---
+```
 ---
 
 ### 📦 Clone the Repository
@@ -130,6 +131,8 @@ This project is open-source and available under the [MIT License](LICENSE).
 Made with 💻 by **Dinesh Sharma**
 
 - 🧑‍💻 GitHub: [@ds1910](https://github.com/ds1910)
+- 🌐 Portfolio: [dineshsharma.dev](https://dineshsharma.dev)
+- 📧 Email: your.email@example.com
+- 💼 LinkedIn: [linkedin.com/in/ds1910](https://linkedin.com/in/ds1910)
 
 > If you liked this project, don’t forget to ⭐️ the repo and share it!
-```

@@ -80,6 +80,7 @@ npm install
 # 🔐 Configure Environment Variables
 Create a .env file in the root directory:
 
+```bash
 REACT_APP_EMAILJS_USERID=your_emailjs_user_id
 REACT_APP_EMAILJS_TEMPLATEID=your_emailjs_template_id
 REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
@@ -87,7 +88,7 @@ REACT_APP_EMAILJS_RECEIVERID=your_emailjs_receiver_id
 
 ```
 # 🚀 Run the Development Server
-
+```bash
 npm run dev
 Visit http://localhost:5173 to see your portfolio in action.
 

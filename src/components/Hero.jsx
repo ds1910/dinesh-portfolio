@@ -1,58 +1,97 @@
-import { motion } from "framer-motion";
-
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+
+// AnimatedLetters component for letter-by-letter animation
+const AnimatedLetters = ({ text }) => {
+  return (
+    <motion.span
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.05,
+          },
+        },
+        exit: {
+          transition: {
+            staggerChildren: 0.03,
+            staggerDirection: -1,
+          },
+        },
+      }}
+      className="inline-block"
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          className="inline-block"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+            exit: { opacity: 0, y: -20 },
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+};
 
 const Hero = () => {
+  const phrases = ["Dinesh", "Full Stack Developer", "Problem Solver"];
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const showDuration = 1800; // Visible duration
+    const totalCycle = 2500;   // Total time before next word
+
+    const showTimeout = setTimeout(() => setVisible(false), showDuration);
+
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % phrases.length);
+      setVisible(true);
+      setTimeout(() => setVisible(false), showDuration);
+    }, totalCycle);
+
+    return () => {
+      clearTimeout(showTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto px-6 sm:px-16 flex flex-col justify-center items-center sm:items-start gap-5`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915eff]">Dinesh</span>
+        <div className="flex flex-col items-center sm:items-start w-full text-center sm:text-left">
+          <h1
+            className={`${styles.heroHeadText} text-white leading-tight break-words max-w-[90vw]`}
+          >
+            Hi, I'm&nbsp;
+            <span className="text-[#915eff] inline-block">
+              <AnimatePresence mode="wait">
+                {visible && (
+                  <AnimatedLetters key={phrases[index]} text={phrases[index]} />
+                )}
+              </AnimatePresence>
+            </span>
           </h1>
 
-          {/* Short version for mobile */}
-          <p className={`${styles.heroSubText} mt-2 text-white-100 block md:hidden`}>
-            Full-stack MERN developer
-          </p>
-
-          {/* Full version for desktop */}
-          <p className={`${styles.heroSubText} mt-2 text-white-100 hidden md:block`}>
-            Full-stack MERN developer driven to build efficient,
-            <br />
-            user-focused applications that solve real-world problems.
+          <p
+            className={`${styles.heroSubText} mt-4 text-white-100 max-w-[90vw] sm:max-w-[600px] break-words`}
+          >
+            I build efficient, user-friendly applications that solve real-world
+            problems.
           </p>
         </div>
-      </div>
-
-      {/* Canvas (PC) */}
-      <ComputersCanvas />
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </a>
       </div>
     </section>
   );
